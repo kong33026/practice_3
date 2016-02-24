@@ -1,27 +1,18 @@
 #include<stdio.h>
+#include"hcf_lcm.h"
 
 int main(int argc, char *argv[])
 {
-	 int a, b, x, y, t, gcd, lcm;
+	long x, y, hcf, lcm;
  
-  printf("Enter two integers\n");
-  scanf("%d%d", &x, &y);
+	printf("Enter two integers\n");
+	scanf("%ld%ld", &x, &y);
  
-  a = x;
-  b = y;
- 
-  while (b != 0) {
-    t = b;
-    b = a % b;
-    a = t;
-    printf	("b  and a\n %d %d\n",b,a );
-  }
- 
-  gcd = a;
-  lcm = (x*y)/gcd;
- 
-  printf("Greatest common divisor of %d and %d = %d\n", x, y, gcd);
-  printf("Least common multiple of %d and %d = %d\n", x, y, lcm);
-
+		hcf = gcd(x, y);
+		lcm = (x*y)/hcf;
+  
+	printf("Greatest common divisor of %ld and %ld = %ld\n", x, y, hcf);
+	printf("Least common multiple of %ld and %ld = %ld\n", x, y, lcm);
+	
 	return 0;
 }
